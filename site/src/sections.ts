@@ -95,14 +95,14 @@ export function initReveals() {
 export function initGallery() {
   const grid = document.getElementById("gallery-grid")!;
   grid.innerHTML = PHOTOS.map((p, i) =>
-    `<button data-i="${i}" aria-label="Открыть фото: ${p.alt}"><img src="/photos/${p.src}-s.webp" alt="${p.alt}" loading="lazy" /></button>`,
+    `<button data-i="${i}" aria-label="Открыть фото: ${p.alt}"><img src="${import.meta.env.BASE_URL}photos/${p.src}-s.webp" alt="${p.alt}" loading="lazy" /></button>`,
   ).join("");
   const box = document.getElementById("lightbox") as HTMLDialogElement;
   const img = box.querySelector("img")!;
   let idx = 0;
   const show = (i: number) => {
     idx = (i + PHOTOS.length) % PHOTOS.length;
-    img.src = `/photos/${PHOTOS[idx].src}.webp`;
+    img.src = `${import.meta.env.BASE_URL}photos/${PHOTOS[idx].src}.webp`;
     img.alt = PHOTOS[idx].alt;
   };
   grid.addEventListener("click", (e) => {

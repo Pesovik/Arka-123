@@ -145,8 +145,8 @@ export function initRoom(root: HTMLElement) {
   // вид из окна: фото на плоскости в нескольких метрах за стеклом
   const loader = new THREE.TextureLoader();
   const viewTex: Record<string, THREE.Texture> = {
-    day: loader.load("/room/view-day.webp"),
-    sunset: loader.load("/room/view-sunset.webp"),
+    day: loader.load(`${import.meta.env.BASE_URL}room/view-day.webp`),
+    sunset: loader.load(`${import.meta.env.BASE_URL}room/view-sunset.webp`),
   };
   Object.values(viewTex).forEach((t) => (t.colorSpace = THREE.SRGBColorSpace));
   const viewMat = new THREE.MeshBasicMaterial({ map: viewTex.day, toneMapped: false });

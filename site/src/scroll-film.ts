@@ -12,13 +12,13 @@ type Variant = { count: number; w: number; h: number };
 type Manifest = { desktop: Variant; mobile?: Variant };
 
 export async function initFilm(canvas: HTMLCanvasElement, section: HTMLElement, onProgress: (p: number) => void) {
-  const manifest: Manifest = await fetch("/film/manifest.json").then((r) => r.json());
+  const manifest: Manifest = await fetch(`${import.meta.env.BASE_URL}film/manifest.json`).then((r) => r.json());
   const isMobile = window.matchMedia("(max-aspect-ratio: 4/5)").matches && !!manifest.mobile;
   const variant = isMobile ? "mobile" : "desktop";
   const v = (isMobile ? manifest.mobile : manifest.desktop)!;
   const frames: (HTMLImageElement | null)[] = new Array(v.count).fill(null);
   const ctx = canvas.getContext("2d")!;
-  const src = (i: number) => `/film/${variant}/${String(i + 1).padStart(4, "0")}.webp`;
+  const src = (i: number) => `${import.meta.env.BASE_URL}film/${variant}/${String(i + 1).padStart(4, "0")}.webp`;
 
   let current = 0;
   const draw = (i: number) => {
