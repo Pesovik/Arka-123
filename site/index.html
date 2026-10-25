@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>АРКА 123 — пространство для мастер-классов напротив Библиотеки</title>
+    <meta name="description" content="АРКА 123 — 123 м² для мастер-классов и семинаров в Минске. Арочные окна 4×3,5 м с видом на Национальную библиотеку. Встречаемся напротив Библиотеки." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Прелоадер: арка «заполняется светом» по мере загрузки -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__logo" data-logo="loader"></div>
+      <div class="loader__bar"><i></i></div>
+    </div>
+
+    <header class="header" id="header">
+      <a class="header__logo" href="#top" aria-label="АРКА 123 — на главную" data-logo="header"></a>
+      <nav class="header__nav" aria-label="Основная навигация">
+        <a href="#about">О пространстве</a>
+        <a href="#space">Помещение</a>
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#reviews">Отзывы</a>
+      </nav>
+      <a class="btn btn--gold header__cta" href="#booking">Забронировать</a>
+      <button class="header__burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+    </header>
+
+    <main id="top">
+      <!-- Скролл-фильм: героиня встречает и проводит по пространству -->
+      <section class="story" id="story">
+        <div class="story__sticky">
+          <canvas class="story__canvas" id="film"></canvas>
+          <div class="story__shade"></div>
+        </div>
+        <div class="story__scenes">
+          <!-- 6 сцен по облёту Анны: окна → зал → лекция → столы → ресепшен → приглашение -->
+          <div class="scene scene--hero" data-scene="0">
+            <p class="eyebrow">Минск · Мстиславца, 10</p>
+            <h1 class="display">Пространство<br /><em>для ваших идей</em></h1>
+            <p class="lead">Мастер-классы · Встречи · Презентации</p>
+            <div class="scene__actions">
+              <a class="btn btn--gold" href="#space">Посмотреть пространство</a>
+            </div>
+            <div class="scroll-hint"><span></span><b class="scroll-hint__desk">Прокрутите, чтобы войти</b><b class="scroll-hint__touch">Свайпните вверх</b></div>
+          </div>
+          <div class="scene scene--right" data-scene="1">
+            <div class="scene__card">
+            <p class="eyebrow">Зал</p>
+            <h2 class="display-sm">123 м² и арочные окна<br /><em>4 × 3,5 м</em></h2>
+            <p>Потолки 4,5 метра, 33 светильника и вид на Национальную библиотеку — естественный свет весь день.</p>
+            </div>
+          </div>
+          <div class="scene" data-scene="2">
+            <div class="scene__card">
+            <p class="eyebrow">Лекция</p>
+            <h2 class="display-sm">Мастер-классы,<br /><em>семинары, лекции</em></h2>
+            <p>Проектор, экран 3 м и звук. До 30 гостей рядами.</p>
+            <div class="seg seg--inline" role="group" aria-label="Посмотреть рассадку в 3D">
+              <button class="seg__btn" data-goto-layout="lecture">Лекция</button>
+              <button class="seg__btn" data-goto-layout="table">Большой стол</button>
+              <button class="seg__btn" data-goto-layout="islands">Отдельные столы</button>
+            </div>
+            </div>
+          </div>
+          <div class="scene scene--right" data-scene="3">
+            <div class="scene__card">
+            <p class="eyebrow">Воркшоп</p>
+            <h2 class="display-sm">Большой стол<br /><em>или отдельные столы</em></h2>
+            <p>Один стол на 18 человек или шесть островов на 36 гостей — расставим зал под ваш формат.</p>
+            </div>
+          </div>
+          <div class="scene" data-scene="4">
+            <div class="scene__card">
+            <p class="eyebrow">Ресепшен</p>
+            <h2 class="display-sm">Гостей встречают<br /><em>у входа</em></h2>
+            <p>Стойка администратора и полка с журналами — подскажем дорогу, отметим участников, поможем с организацией.</p>
+            </div>
+          </div>
+          <div class="scene scene--right" data-scene="5">
+            <div class="scene__card">
+            <p class="eyebrow">Приглашение</p>
+            <h2 class="display-sm">Встречаемся напротив<br /><em>Библиотеки.</em></h2>
+            <p>Покажу зал и помогу подготовить мероприятие.</p>
+            <div class="scene__actions">
+              <a class="btn btn--gold" href="#booking">Выбрать дату</a>
+              <a class="btn btn--ghost" href="tel:+375290000123">+375 29 000-01-23</a>
+              <a class="btn btn--ghost" href="https://t.me/arka123" target="_blank" rel="noopener">Telegram</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light" id="about">
+        <div class="container about">
+          <div class="about__text">
+            <p class="eyebrow eyebrow--dark">Об АРКА 123</p>
+            <h2 class="title">Пространство, в котором <em>хочется учиться</em></h2>
+            <p>Мы сдаём в аренду зал для мастер-классов, семинаров, тренингов и камерных презентаций. Название — это наша суть: огромные арочные окна и арка между башнями, через которую открывается вид на Библиотеку. А 123 — это площадь зала в квадратных метрах.</p>
+            <ul class="facts">
+              <li><b>123</b><span>м² открытого зала</span></li>
+              <li><b>4,5</b><span>м — высота потолков</span></li>
+              <li><b>2</b><span>арочных окна 4 × 3,5 м</span></li>
+              <li><b>до 30</b><span>гостей в формате лекции</span></li>
+            </ul>
+          </div>
+          <figure class="about__host">
+            <img src="/photos/host.webp" alt="Хозяйка АРКА 123 в бежевом костюме в зале на закате, за ней арочное окно и стена с часами" loading="lazy" width="757" height="1129" />
+            <figcaption>
+              <b>Анна</b> — хозяйка АРКА 123.<br />Встречу, покажу зал и помогу подготовить мероприятие.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="space">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">Наше помещение</p>
+            <h2 class="title">Покрутите зал и <em>выберите рассадку</em></h2>
+            <p class="section__sub">Объёмная модель в реальных пропорциях. Перетаскивайте, чтобы осмотреться, приближайте кнопками − / + и переключайте сценарии.</p>
+          </div>
+          <div class="room" id="room">
+            <canvas class="room__canvas" id="room-canvas"></canvas>
+            <div class="room__ui">
+              <div class="seg" role="tablist" aria-label="Сценарий рассадки">
+                <button class="seg__btn is-active" data-layout="empty">Пустой зал</button>
+                <button class="seg__btn" data-layout="lecture">Лекция</button>
+                <button class="seg__btn" data-layout="table">Большой стол</button>
+                <button class="seg__btn" data-layout="islands">Отдельные столы</button>
+              </div>
+              <div class="seg seg--small" aria-label="Время суток">
+                <button class="seg__btn is-active" data-time="day">День</button>
+                <button class="seg__btn" data-time="sunset">Закат</button>
+              </div>
+            </div>
+            <div class="room__views" aria-label="Точки обзора">
+              <button data-view="overview">Обзор</button>
+              <button data-view="entrance">Вход</button>
+              <button data-view="windows">Окна</button>
+              <button data-view="reception">Ресепшен</button>
+              <button data-view="speaker">Зона спикера</button>
+            </div>
+            <div class="room__zoom" aria-label="Масштаб">
+              <button data-zoom="out" aria-label="Отдалить">−</button>
+              <button data-zoom="in" aria-label="Приблизить">+</button>
+            </div>
+            <div class="room__badge" id="room-badge"><b>123 м²</b><span>свободная планировка</span></div>
+            <div class="room__loading" id="room-loading">Собираем зал…</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light" id="services">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow eyebrow--dark">Наши услуги и цены</p>
+            <h2 class="title">Форматы, под которые <em>всё готово</em></h2>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3>Мастер-класс</h3>
+              <p>Рабочие столы, удлинители, хороший свет для съёмки процесса.</p>
+              <p class="card__meta">до 30 человек</p>
+              <p class="card__price">от 60 BYN<small>/час</small></p>
+            </article>
+            <article class="card">
+              <h3>Лекция и семинар</h3>
+              <p>Проектор, экран 3 м, микрофоны и рассадка рядами.</p>
+              <p class="card__meta">до 30 человек</p>
+              <p class="card__price">от 70 BYN<small>/час</small></p>
+            </article>
+            <article class="card">
+              <h3>Тренинг и воркшоп</h3>
+              <p>Отдельные столы-острова, флипчарты, магнитная доска.</p>
+              <p class="card__meta">до 40 человек</p>
+              <p class="card__price">от 65 BYN<small>/час</small></p>
+            </article>
+            <article class="card">
+              <h3>Фото- и видеосъёмка</h3>
+              <p>Арочные окна, высокие потолки, ровный дневной свет.</p>
+              <p class="card__meta">до 15 человек</p>
+              <p class="card__price">от 50 BYN<small>/час</small></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="gallery">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">Фотогалерея</p>
+            <h2 class="title">Как выглядит <em>АРКА 123</em></h2>
+          </div>
+          <div class="gallery" id="gallery-grid"></div>
+        </div>
+        <dialog class="lightbox" id="lightbox">
+          <button class="lightbox__close" aria-label="Закрыть">×</button>
+          <button class="lightbox__nav lightbox__nav--prev" aria-label="Предыдущее фото">‹</button>
+          <img alt="" />
+          <button class="lightbox__nav lightbox__nav--next" aria-label="Следующее фото">›</button>
+        </dialog>
+      </section>
+
+      <section class="section section--light" id="pricing">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow eyebrow--dark">Тарифы и услуги</p>
+            <h2 class="title">Простые тарифы <em>без скрытых платежей</em></h2>
+          </div>
+          <div class="plans">
+            <article class="plan">
+              <h3>Час</h3>
+              <p class="plan__price">60 <span>BYN</span></p>
+              <ul>
+                <li>Минимум 2 часа</li>
+                <li>Мебель и базовая расстановка</li>
+                <li>Wi-Fi, кухня, кулер</li>
+              </ul>
+              <a class="btn btn--line" href="#booking">Выбрать</a>
+            </article>
+            <article class="plan plan--accent">
+              <p class="plan__tag">Популярный</p>
+              <h3>Полдня · 5 часов</h3>
+              <p class="plan__price">260 <span>BYN</span></p>
+              <ul>
+                <li>Всё из тарифа «Час»</li>
+                <li>Проектор, экран, звук</li>
+                <li>Флипчарт и маркеры</li>
+                <li>Подготовка зала за 30 минут</li>
+              </ul>
+              <a class="btn btn--gold" href="#booking">Выбрать</a>
+            </article>
+            <article class="plan">
+              <h3>День · 10 часов</h3>
+              <p class="plan__price">450 <span>BYN</span></p>
+              <ul>
+                <li>Всё из тарифа «Полдня»</li>
+                <li>Любая рассадка и пересборка</li>
+                <li>Администратор на месте</li>
+              </ul>
+              <a class="btn btn--line" href="#booking">Выбрать</a>
+            </article>
+          </div>
+          <div class="extras">
+            <h3>Дополнительно</h3>
+            <dl>
+              <div><dt>Петличные микрофоны</dt><dd>20 BYN</dd></div>
+              <div><dt>Видеосъёмка мероприятия</dt><dd>от 150 BYN</dd></div>
+              <div><dt>Брендирование зала</dt><dd>по запросу</dd></div>
+              <div><dt>Регистрация участников</dt><dd>30 BYN</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="reviews">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">Отзывы</p>
+            <h2 class="title">Что говорят <em>наши гости</em></h2>
+          </div>
+          <div class="reviews" id="reviews-track">
+            <blockquote class="review">
+              <p>Провели здесь трёхдневный курс по керамике. Свет из окон — сказка: участники фотографировали работы прямо на подоконниках.</p>
+              <footer><b>Ольга Миронова</b><span>студия «Глина и огонь»</span></footer>
+            </blockquote>
+            <blockquote class="review">
+              <p>Нужен был зал на 30 человек под лекцию с проектором. Всё расставили заранее, звук отличный, а вид на Библиотеку стал темой для small talk.</p>
+              <footer><b>Дмитрий Карпович</b><span>IT-сообщество Minsk Dev Talks</span></footer>
+            </blockquote>
+            <blockquote class="review">
+              <p>Высокие потолки и арочные окна — зал смотрится дорого на любом фото. Арендовали для презентации коллекции и вернёмся снова.</p>
+              <footer><b>Анастасия Лис</b><span>бренд одежды LIS</span></footer>
+            </blockquote>
+            <blockquote class="review">
+              <p>Удобно, что можно пересобрать зал за обед: утром рядами под лекцию, после — столы-острова для практики.</p>
+              <footer><b>Сергей Ковалёв</b><span>бизнес-тренер</span></footer>
+            </blockquote>
+          </div>
+          <div class="reviews__nav">
+            <button aria-label="Предыдущий отзыв" data-dir="-1">←</button>
+            <button aria-label="Следующий отзыв" data-dir="1">→</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--booking" id="booking">
+        <div class="container booking">
+          <div>
+            <p class="eyebrow">Бронирование</p>
+            <h2 class="title">Встречаемся напротив <em>Библиотеки.</em></h2>
+            <p>Оставьте заявку — перезвоним в течение 15 минут, подтвердим дату и предложим рассадку под ваш формат.</p>
+          </div>
+          <form class="form" id="booking-form">
+            <label class="field field--name">Имя<input name="name" required autocomplete="name" /></label>
+            <label class="field field--phone">Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+375" /></label>
+            <label class="field field--date">Дата<input name="date" type="date" /></label>
+            <label class="field field--select">Формат
+              <select name="format">
+                <option>Мастер-класс</option>
+                <option>Лекция / семинар</option>
+                <option>Тренинг / воркшоп</option>
+                <option>Съёмка</option>
+              </select>
+            </label>
+            <button class="btn btn--gold" type="submit">Отправить заявку</button>
+            <p class="form__ok" hidden>Спасибо! Мы скоро свяжемся с вами.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <div class="footer__logo" data-logo="footer"></div>
+        </div>
+        <div>
+          <h4>Адрес</h4>
+          <p>Минск, ул. Мстиславца, 10<br />2 этаж, помещение 254</p>
+          <a href="https://yandex.by/maps/?text=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%9C%D1%81%D1%82%D0%B8%D1%81%D0%BB%D0%B0%D0%B2%D1%86%D0%B0%2C%2010" target="_blank" rel="noopener">Открыть на карте</a>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <p><a href="tel:+375290000123">+375 29 000-01-23</a><br /><a href="mailto:hello@arka123.by">hello@arka123.by</a></p>
+          <p>Ежедневно 8:00–23:00</p>
+        </div>
+        <div>
+          <h4>Соцсети</h4>
+          <p><a href="#">Instagram</a><br /><a href="#">Telegram</a></p>
+        </div>
+      </div>
+      <p class="container footer__copy">© 2026 АРКА 123. Вымышленная компания — тестовое задание.</p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
